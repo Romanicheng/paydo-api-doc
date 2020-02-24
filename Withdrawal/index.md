@@ -2,7 +2,7 @@
 
 1. [Create withdrawal](#create-withdrawal)
     * [Request example](#request-example)
-    * [Withdrawal methods](#withdrawal methods)
+    * [Withdrawal methods](#withdrawal-methods)
 1. [Create withdrawal bulk](./bulk.md)
 1. [Withdrawal payment methods](./paymentMethods.md)
 1. [Withdrawal transactions list](./getWithdrawals.md)
