@@ -27,7 +27,13 @@ Each request to Paydo API should have **Content-Type HTTP header** with `applica
     * [Create checkout transaction](Transaction/createCheckoutTransaction.md)
     * [Get transaction](Transaction/getTransaction.md)
 1. [Refund](refund.md)
-
+1. [Withdrawal](Withdrawal/index.md)
+    * [Create withdrawal](Withdrawal/index.md#create-withdrawal)
+        * [Request example](Withdrawal/index.md#request-example)
+        * [Withdrawal methods](Withdrawal/index.md#withdrawal methods)
+    * [Create withdrawal bulk](Withdrawal/bulk.md)
+    * [Withdrawal payment methods](Withdrawal/paymentMethods.md)
+    * [Withdrawal transactions list](Withdrawal/getWithdrawals.md)
 
 
 ## API Response examples
