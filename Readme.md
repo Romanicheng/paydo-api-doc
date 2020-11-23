@@ -80,7 +80,8 @@ status    | **Number**                        | Don't care about it. It's requir
     Body
     ```json
     {
-        "message": "Unsupported media type. Only json allowed"
+        "message": "Unsupported media type. Only json allowed",
+	"status": 0
     }
     ```
 
@@ -101,7 +102,8 @@ status    | **Number**                        | Don't care about it. It's requir
             "password": [
                 "This value should not be blank."
             ]
-        }
+        },
+	"status": 0
     }
     ```
 
