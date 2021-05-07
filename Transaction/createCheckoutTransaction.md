@@ -3,6 +3,7 @@
     * [Request example](#request-example)
     * [Successful response example](#successful-response-example)
     * [Errors and failed responses](#errors-and-failed-responses)
+    * [Code info](#code-info)
 
 # Intro
 
@@ -70,7 +71,8 @@ Body
     "data": {
         "isSuccess": true,
         "message": "",
-        "txid": "e6c8ba69-b961-4e93-a083-2097f30dfbd9"
+        "txid": "e6c8ba69-b961-4e93-a083-2097f30dfbd9",
+        "code": 1000
     },
     "status": 1
 }
@@ -114,3 +116,14 @@ Validation error
     }
 }
 ```
+
+##Code info
+**What do the codes in the answer mean:**
+
+Code    | Description
+--------|---------------------------------
+1000    | Transaction was created successfully.
+1001    | The transaction was not created.
+100001  | Authentication and verification required. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
+100002  | User registered. Required verification. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
+100003  | Required authentication. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
