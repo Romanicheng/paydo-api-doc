@@ -117,7 +117,7 @@ Validation error
 }
 ```
 
-##Code info
+## Code info
 **What do the codes in the answer mean:**
 
 Code    | Description
