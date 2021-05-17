@@ -124,6 +124,7 @@ Code    | Description
 --------|---------------------------------
 1000    | Transaction was created successfully.
 1001    | The transaction was not created.
+1002    | Authentication required. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
 100001  | Authentication and verification required. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
 100002  | User registered. Required verification. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
 100003  | Required authentication. If you receive this error, then you cannot create a transaction instead of a user. In order for the payment to be successful, you need to redirect the user to the page: https://paydo.com/payment/{InvoiceId}. You can see how to create an invoice in "[How create invoice](../Invoice/createInvoice.md)".
