@@ -98,7 +98,7 @@ Body
 
 As you can see, the `config.fields` section of response contains description of required fields. For direct payment (
 payment without an intermediate checkout form) using this payment method, you must fill out all the required fields
-when [creating invoice](createInvoice.md). Otherwise, during the payment process, payer will be redirected to the
+when [creating invoice](../Invoice/createInvoice.md). Otherwise, during the payment process, payer will be redirected to the
 checkout form, where he/she will have to manually fill in the required fields.
 
 ---- 
