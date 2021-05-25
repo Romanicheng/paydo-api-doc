@@ -142,24 +142,21 @@ curl -X GET \
                     "ip": "31.223.231.161",
                     "city": {
                         "id": 703448,
-                        "lat": 50.45466,
-                        "lon": 30.5238,
-                        "name_en": "Kiev",
-                        "name_ru": "Киев"
+                        "lat": 51.5085,
+                        "lon": -0.1257,
+                        "name_en": "London"
                     },
                     "region": {
                         "id": 703447,
-                        "iso": "UA-30",
-                        "name_en": "Kyiv",
-                        "name_ru": "Киев"
+                        "iso": "GB-LND",
+                        "name_en": "Greater London"
                     },
                     "country": {
                         "id": 222,
-                        "iso": "UA",
-                        "lat": 49,
-                        "lon": 32,
-                        "name_en": "Ukraine",
-                        "name_ru": "Украина"
+                        "iso": "GB",
+                        "lat": 51.5085,
+                        "lon": -0.1257,
+                        "name_en": "United Kingdom"
                     }
                 },
                 "resultUrl": "https://example.com/result_url",
@@ -179,4 +176,3 @@ curl -X GET \
 ```
 
 You can see the description of statuses and types at the page [Get transaction](Transaction/getTransaction.md)
-
