@@ -18,7 +18,7 @@ and at the same time want have more controls of the payment.
 
 ## Create Invoice
 
-It can be useful for you to get [Merchant payment methods](getMerchantPaymentMethods.md) on this step.
+It can be useful for you to get [Merchant payment methods](getAvailablePaymentMethods.md) on this step.
 
 Follow the link to see how [create Invoice](../Invoice/createInvoice.md)
 

@@ -6,7 +6,7 @@
         * [IPN Request example](#ipn-request-example)
 1. [Card tokenization](createCardToken.md)
 1. [Check payment status](checkTransactionStatus.md)
-1. [Merchant payment methods](getMerchantPaymentMethods.md)
+1. [Merchant payment methods](getAvailablePaymentMethods.md)
 
 # Checkout
 

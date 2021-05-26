@@ -19,7 +19,7 @@ Each request to Paydo API should have **Content-Type HTTP header** with `applica
         * [IPN Request example](Checkout/checkout.md#ipn-request-example)
     * [Card tokenization](Checkout/createCardToken.md)
     * [Check payment status](Checkout/checkTransactionStatus.md)
-    * [Merchant payment methods](Checkout/getMerchantPaymentMethods.md)
+    * [Merchant payment methods](Checkout/getAvailablePaymentMethods.md)
 1. [Invoice](Invoice/getInvoice.md)
     * [Create invoice](Invoice/createInvoice.md)
     * [Get invoice](Invoice/getInvoice.md)
