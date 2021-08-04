@@ -1,3 +1,7 @@
+* [Back to contents](../Readme.md#contents)
+
+# Create invoice
+
 * [Create invoice](#create-invoice)
     * [URL for requests](#url-for-requests)
         * [Payer extra info](#payer-extra-info)
@@ -13,8 +17,6 @@
 
 **Invoice** - is a basic entity in each payment. When you start payment, you pay the invoice.
 Checkout transaction can be created only for invoice. 
-
-## Create invoice
 
 Actually, you can create an example request in the personal merchants account in the section Projects > REST.
 
@@ -42,12 +44,12 @@ publicKey                       | string           | Public key issued in the pr
 &emsp;payer.phone               | string         | Payer phone                                                                                               |           |
 &emsp;payer.extraFields         | JSON object    | payer extra info (fieldName:fieldValue)                                                                   |           |
 language                        | string           |   Language  (en, ru).                                                                                   |     *     |
-resultUrl                       | string           | Successful payment link. Allowed to use [template expression][template].                                |     *     |
-failPath                        | string           | Unsuccessful payment link. Allowed to use [template expression][template].                              |     *     |
+resultUrl                       | string           | Successful payment link. Allowed to use [template expression](#template-expressions).                                |     *     |
+failPath                        | string           | Unsuccessful payment link. Allowed to use [template expression](#template-expressions).                              |     *     |
 signature                       | string           | [Signature](#signature)                                                                                 |     *     |
 paymentMethod                   | string           | Payment method id selected for this invoice.                                                            |           |
 
-[template]: (#template-expressions)
+[template](#template-expressions)
 
 ###### Payer extra info
 **payer** is a structure with a specific set of fields such as: `email`, `name`, `phone`, `extraFields`.
@@ -93,11 +95,14 @@ Pattern        |        Replacement
 ```
     # Template
     https://your.site/result-page/?invoiceId={{invoiceId}}&txid={{txid}}
+    
     # Result
     https://your.site/result-page/?invoiceId=b8bf37ab-fc69-44df-bfeb-b9a879ce20b7&txid=1eeda2f2-d3e1-4edd-853e-3d897bc629b2
 
+
     # Template
     https://your.site/result-page/{{txid}}/
+    
     # Result
     https://your.site/result-page/1eeda2f2-d3e1-4edd-853e-3d897bc629b2/
 ```
@@ -155,7 +160,8 @@ identifier: 81962ed0-a65c-4d1a-851b-b3dbf9750399
 ```
 
 ----
-**Note:** Don't use identifier from response body, it's will be removed in the future API releases.
+
+**Note:** Don't use identifier from response body, it will be removed in the future API releases.
 
 ----
 
@@ -167,19 +173,7 @@ Body
 }
 ```
 
-
-
-
-
-
 ### Errors and failed responses
-
-**415 Unsupported Media Type**
-```json
-{
-  "message": "Unsupported media type. Only json allowed"
-}
-```
 
 **404 Not Found**
 ```json
@@ -196,9 +190,6 @@ Body
     }
 }
 ```
-
-
-
 
 ### Signature
 

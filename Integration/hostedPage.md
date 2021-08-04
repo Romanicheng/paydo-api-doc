@@ -13,7 +13,7 @@ and at the same time the control over almost the entire process will be on the s
 
 1. [Create Invoice](../Invoice/createInvoice.md)
 1. [Redirect user to invoice preprocessing page](#redirect-user-to-invoice-preprocessing-page)
-1. [Receive IPN (instant payment notification)](checkout.md#ipn) - in case of transaction was successfully created.
+1. [Receive IPN (instant payment notification)](../Checkout/checkout.md#ipn) - in case of transaction was successfully created.
 
 ### Redirect user to invoice preprocessing page
 

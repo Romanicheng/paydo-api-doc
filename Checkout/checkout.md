@@ -1,7 +1,7 @@
 1. [Checkout](#checkout)
     * [Integration types](#integration-types)
-        * [Hosted page](hostedPage.md)
-        * [Server-To-Server](serverToServer.md)
+        * [Hosted page](../Integration/hostedPage.md)
+        * [Server-To-Server](../Integration/serverToServer.md)
     * [IPN (instant payment notification)](#ipn)
         * [IPN Request example](#ipn-request-example)
 1. [Card tokenization](createCardToken.md)
@@ -26,8 +26,8 @@ For a new project, the public key looks like this:
 
 There are currently 2 options for using the API.
 
-* [Hosted page](hostedPage.md) - very simple integration with showing Paydo pages
-* [Server-To-Server](serverToServer.md) - more hard integration using Paydo API.
+* [Hosted page](../Integration/hostedPage.md) - very simple integration with showing Paydo pages
+* [Server-To-Server](../Integration/serverToServer.md) - more hard integration using Paydo API.
  
 
 ## IPN
