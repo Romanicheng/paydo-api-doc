@@ -10,7 +10,7 @@
 # Get transaction info
 
 ----
-**Note:** This URL require [authentication](../authentication.md).
+**Note:** This URL require [authentication](../Authentication/authentication.md).
 
 ----
 
@@ -120,10 +120,16 @@ Body
         "resultUrl": "https://your.site/result",
         "failUrl": "https://your.site/fail",
         "pid": "23234523525",
+        "strategy": 2,
+        "chosenAmount": 100,
+        "chosenCurrency": "USD",
+        "castedAmount": "USD",
+        "castedCurrency": "USD",
         "application": {
             "identifier": "3",
             "name": "Project name",
-            "info": "For sales"
+            "info": "For sales",
+            "midIdentifier": "1023"
         }
     },
     "status": 1
@@ -131,13 +137,6 @@ Body
 ```
 
 ### Errors and failed responses
-
-**415 Unsupported Media Type**
-```json
-{
-  "message": "Unsupported media type. Only json allowed"
-}
-```
 
 **404 Not Found**
 ```json

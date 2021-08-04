@@ -1,11 +1,13 @@
+* [Back to contents](../Readme.md#contents)
+
+# Get invoice info
+
 * [Get invoice info](#get-invoice-info)
     * [URL for requests](#url-for-requests)
     * [Request example](#request-example)
     * [Successful response example](#successful-response-example)
     * [Errors and failed responses](#errors-and-failed-responses)
     * [Invoice statuses](#invoice-statuses)
-
-# Get invoice info
 
 ### URL for requests
 
@@ -61,6 +63,7 @@ Body
         "description": "",
         "resultUrl": "https://your.site/result",
         "failUrl": "https://your.site/fail",
+        "productUrl": null,
         "language": "en",
         "payer": {
             "email": "test.user@paydo.com",
@@ -90,20 +93,14 @@ Body
         "customization": [],
         "createdAt": 1567754398,
         "updatedAt": null,
-        "transactionIdentifier": "3333feb1-eeb8-4215-a494-238242788888"
+        "transactionIdentifier": "3333feb1-eeb8-4215-a494-238242788888",
+        "isTopUp": false
     },
     "status": 1
 }
 ```
 
 ### Errors and failed responses
-
-**415 Unsupported Media Type**
-```json
-{
-  "message": "Unsupported media type. Only json allowed"
-}
-```
 
 **404 Not Found**
 ```json

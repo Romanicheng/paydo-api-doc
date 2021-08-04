@@ -16,13 +16,13 @@ Based on below responses can be chosen several ways what to do next:
 
 ----
 
-1. Response['form'] is not empty - redirect user (GET/POST) to Response['form']['url'].
+1. `Respons['form']` is not empty - redirect user (GET/POST) to `Response['form']['url']`.
 
     Usually POST request - this is payer bank 3DS page. So you have to send form 
     with enctype='application/x-www-form-urlencoded' attribute and this request 
     should be InBrowser (Normal POST request: https://stackoverflow.com/a/15262442/2090853)
 
-    Response['form'] can has next structure:  `['url' => url where make request, 'method' => 'http method GET|POST', 'fields' => [array with formFieldName => formFieldValue]]`
+    `Respons['form']` can has next structure:  `['url' => url where make request, 'method' => 'http method GET|POST', 'fields' => [array with formFieldName => formFieldValue]]`
 
     * Example for GET:
     
@@ -37,10 +37,10 @@ Based on below responses can be chosen several ways what to do next:
             'fields' => ['PaReq' => 'fmn3o8usfjlils', 'MD' => '8ec777d6-685d-4e06-b356-d7673acb47ba', 'TermUrl' => 'https://paydo.com/v1/url']
          ]
         ```
-2. Response['status'] is "pending" and Response['url'] empty - repeat transaction status request after 5-10 seconds.
-3. Response['status'] is "success" - redirect to Response['url']
-4. Response['status'] is "fail" - redirect to Response['url']
-5. Exceptional case. Something went wrong on the Paydo side. Contact Paydo support.
+2. `Response['status']` is `pending` and `Response['url']` empty - repeat transaction status request after 5-10 seconds.
+3. `Response['status']` is `success` - redirect to `Response['url']`
+4. `Response['status']` is `fail` - redirect to `Response['url']`
+5. Exceptional case. Something went wrong on the Paydo side. Contact [Paydo support](https://paydo.com/en/contact-us/).
 
 ### URL for requests
 

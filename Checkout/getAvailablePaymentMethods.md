@@ -1,4 +1,4 @@
-* [Back to contents](../Readme.md)
+* [Back to contents](../Readme.md#contents)
 
 # Merchant payment methods
 
@@ -9,7 +9,7 @@
 
 ## Endpoint description
 
-**Important!** This endpoint requires [authentication](../authentication.md).
+**Important!** This endpoint requires [authentication](../Authentication/authentication.md).
 
 Get payment methods list available for merchant per application/project.
 
@@ -109,7 +109,7 @@ the `payer` object, and all other necessary fields are contained in a nested `ex
  ```json
  {
   "payer": {
-    "email": "user+1@payop.com",
+    "email": "user@test.com",
     "phone": "",
     "name": "",
     "extraFields": {

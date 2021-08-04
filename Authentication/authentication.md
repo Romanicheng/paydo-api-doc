@@ -1,15 +1,17 @@
-* [Authentication](#authentication)
-* [Get authentication token](#get-authentication-token)
+* [Back to contents](../Readme.md#contents)
 
 # Bearer Authentication
+
+* [Bearer Authentication](#bearer-authentication)
+* [Get authentication token](#get-authentication-token)
 
 Several requests to Paydo API require authentication.
 
 Paydo API Authentication based on JWT tokens and using [Bearer Authentication](https://swagger.io/docs/specification/authentication/bearer-authentication/).
 The client must send this token in the `Authorization` header when making requests to protected resources:
 
-```
 HTTP-Headers
+```
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwMDAyIiwiYWNjZXNzVG9rZW4iOm51bGwsInRpbWUiOjE1NjY5MTk4NDJ9.jebGttoGUOGQORsPyr5smSbE01fEGDjFgUkBCF342sc
 ``` 
@@ -24,7 +26,7 @@ This functionality may be removed in next major api version.
 
 You can **create** and **view** your API keys in [your account](https://paydo.com/en/profile/settings/jwt-token).
 
-![Paydo JWT Tokens page](./images/paydo-jwt-page.png)
+![Paydo JWT Tokens page](../images/paydo-jwt-page.png)
 
 ----
 **Note:** After creating token you will see it only once, right after create token.

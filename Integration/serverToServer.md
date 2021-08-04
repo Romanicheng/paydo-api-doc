@@ -18,7 +18,7 @@ and at the same time want have more controls of the payment.
 
 ## Create Invoice
 
-It can be useful for you to get [Merchant payment methods](getAvailablePaymentMethods.md) on this step.
+It can be useful for you to get [Merchant payment methods](../Checkout/getAvailablePaymentMethods.md) on this step.
 
 Follow the link to see how [create Invoice](../Invoice/createInvoice.md)
 
@@ -30,13 +30,13 @@ While was created invoice with selected payment method, you can decide what to d
 There available a two cases, depends on selected payment method.
 
 1. if **paymentMethod.formType is "cards"** - to create transaction, request require Card Token.
- So next step is - show card form, prepare and send request to [Card Token generation](createCardToken.md)
+ So next step is - show card form, prepare and send request to [Card Token generation](../Checkout/createCardToken.md)
 1. if **paymentMethod.formType is not "cards"** - you can make 
 request to [create transaction](../Transaction/createCheckoutTransaction.md).
 
 ## Create Bank Card token
 
-Follow the link to see how [Create Bank Card token](createCardToken.md)
+Follow the link to see how [Create Bank Card token](../Checkout/createCardToken.md)
 
 ## Create checkout transaction
 
@@ -44,8 +44,8 @@ Follow the link to see how [Create checkout transaction](../Transaction/createCh
 
 ## Check transaction status and decide where to go
 
-Follow the link to see how [Check transaction status and decide where to go](checkTransactionStatus.md)
+Follow the link to see how [Check transaction status and decide where to go](../Checkout/checkTransactionStatus.md)
 
 ## Receive IPN
 
-Follow the link to see how [receive and process IPN](checkout.md#ipn)
+Follow the link to see how [receive and process IPN](../Checkout/checkout.md#ipn)
