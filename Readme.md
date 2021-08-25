@@ -35,4 +35,4 @@ Each request to Paydo API should have **Content-Type HTTP header** with `applica
     * [Get concrete refund details](Refund/getRefund.md)
     * [Get merchant's refunds](Refund/getRefundList.md)
 8. [Wallet](Wallet)
-    * [Transfer oney between wallets](Wallet/moveMoneyBetweenWalletsWithdrawal.md) 
+    * [Transfer money between wallets](Wallet/moveMoneyBetweenWalletsWithdrawal.md) 
