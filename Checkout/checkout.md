@@ -45,6 +45,11 @@ IPN request will be send to ipn url which you setup for selected project.
  and until the Paydo server, upon this request, receives the HTTP status code "200 OK".
 
 ----
+For greater security, we highly recommend that you accept IPN only from our IP addresses:
+
+    52.49.204.201
+    54.229.170.212
+----
 
 ### IPN Request example
 
