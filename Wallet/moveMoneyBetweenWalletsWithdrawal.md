@@ -34,22 +34,15 @@ $certFilePath = '/project/x25519.pub';
 // Certificate must be encoded as base64 string.
 // You can use below example to encode it or use linux console command: cat /project/x25519.pub | base64 
 $publicKeyCertificate = base64_encode(file_get_contents($certFilePath));
+// Payload
 $data = [
-    [
-        'withdrawalId' => 173685f6-d0d7-54b6-a79c-2c272b5d72b7,
-        'withdrawalSystemId' => 1132125f6-d0d7-54b6-a79c-2c272444417,
-        'withdrawalSystemData' => [
-            'method' => 204
-        ],
-        'method' => 15,
-        'type' => 1,
-        'amount' => 34,
-        'currency' => 'USD',
-        'additionalData' => [
-            'direction' => 'direction one',
-            'referenceId' => 'my.email@address.com'
-        ]
-    ]
+    'recipient' => 2174,
+    'amount' => 34,
+    'currency' => 'USD',
+    'startCurrency' => 'USD',
+    'insuranceCurrency' => 'EUR',
+    'paymentMethodIdentifier' => 204,
+];
 
 $encryptedPayload = sodium_crypto_box_seal(json_encode($data), base64_decode($publicKeyCertificate));
 // $encryptedPayload - it's a binary string
@@ -57,7 +50,22 @@ $base64Payload = base64_encode($encryptedPayload);
 // $base64Payload - looks like 9kQ7v9nXLHjeOyIqi+hIJfEKuOCQZ2C5WWVcnmfPHUxh1EbK5g=
 ```
 
-See more examples [here](../Examples/apiCertificates).
+See more examples [here](../Examples/apiCertificates) how to encrypt.
+
+**Request body**
+
+Parameter              | Type  | Required | Description
+-----------------------|-------|----------|-----------------------
+recipient              |int    |    *     | Identifier of recipient.
+amount                 |string |    *     | Amount of money.
+currency               |string |    *     | Desired currency for transfer. This currency will be received by the recipient.
+startCurrency          |string |    *     | The currency of the initiator of the transfer to be converted into the desired currency.
+insuranceCurrency      |string |          | Currency from which funds will be charged in case there is not enough starting currency
+paymentMethodIdentifier|int    |    *     | Payment method ID is always 204 at this moment. But in the future we are going to add more methods. 
+
+The explanation:
+1. The sender wishes to transfer 100 euros. He has $ 150 in his wallet. The `startСurrency` means that during the operation, 100 euros in dollar equivalent will be withdrawn from his dollar account.
+2. The sender wishes to transfer 100 euros. He has $ 100 and £ 50 in his wallet. First, the required amount of euros in dollar equivalent will be withdrawn from the sender (`startСurrency`). And if there is not enough funds on the starting currency, the rest will be withdrawn from the insurance currency (`insuranceСurrency`).
 
 ## Endpoint description
 
@@ -72,7 +80,7 @@ See more examples [here](../Examples/apiCertificates).
     Content-Type: application/json
     Authorization: Bearer eyJ0eXAiO...
 
-__For more detailed information visit our OpenApi [specification](https://paydo.com/en/open-api-specification/#/Wallet)__.
+__For more detailed information about request visit our OpenApi [specification](https://paydo.com/en/open-api-specification/#/Wallet)__.
 ## Request example:
 
 ```shell script
@@ -80,7 +88,9 @@ curl -X POST \
   https://paydo.com//v1/wallets/move-money-between-wallets/withdraw \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer eyJ0eXAiOiJKV...' \
-    -d '{"data": "l6v39G1mV+LZCc+gQs5AqVnK7..."}'
+    -d '{
+          "data": "DAqj3EwQXPNFX87HA1UJ4wiKsN2PBH2558FvLNYdyzyPTm9dou6RWXNtxnY+6HxwPIuUuqbZccC0+plKb++rVPwTNJuzT+9U6c56HpN5IJEsB+/ierqzUJdJ0FAEcohlqFuDvgXyl+vBpScR60S5HImx5rwHV8gdcdQa9CBq/KJzwNcwy96jZ33Y8ZnnZFtyHc2e92s6iC90iQo1EhVmwsW16oLobsuqiX0D7qI="
+        }'
 ```    
 
 ## Successful response example:
@@ -91,6 +101,13 @@ Content-Type: application/json
 identifierTxFrom: 173685f6-d0d7-54b6-a79c-2c272b5d72b7
 identifierTxTo: bbbf19ff-eaad-4ccf-aa8c-c69d60aaceb0
 ```
+
+**Headers**
+
+Header             | Description
+-------------------|-----------------------
+identifierTxFrom   | Transaction ID of the transfer from the sender's account.
+identifierTxTo     | Transaction ID of the transfer to the receiver's account.
 
 Response Body
 ```json
