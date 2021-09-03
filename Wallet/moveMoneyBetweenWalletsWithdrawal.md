@@ -2,7 +2,7 @@
 
 # Transfer Between Wallets
 
-* [Request payload encrypt/decrypt](#Request payload encrypt/decrypt)
+* [Request payload encrypt](#Request payload encrypt/decrypt)
 * [Endpoint description](#endpoint-description)
 * [Request example](#request-example)
 * [Successful response example](#successful-response-example)
@@ -56,16 +56,21 @@ See more examples [here](../Examples/apiCertificates) how to encrypt.
 
 Parameter              | Type  | Required | Description
 -----------------------|-------|----------|-----------------------
-recipient              |int    |    *     | Identifier of recipient.
+recipient              |string |    *     | Recipient identifier or email.
 amount                 |string |    *     | Amount of money.
 currency               |string |    *     | Desired currency for transfer. This currency will be received by the recipient.
 startCurrency          |string |    *     | The currency of the initiator of the transfer to be converted into the desired currency.
 insuranceCurrency      |string |          | Currency from which funds will be charged in case there is not enough starting currency
 paymentMethodIdentifier|int    |    *     | Payment method ID is always 204 at this moment. But in the future we are going to add more methods. 
+accountType            |int    |          | Recipient account type. Specify only when using email as a value of the `referenceId`. [personal - 1, business 2]
 
 The explanation:
 1. The sender wishes to transfer 100 euros. He has $ 150 in his wallet. The `startСurrency` means that during the operation, 100 euros in dollar equivalent will be withdrawn from his dollar account.
 2. The sender wishes to transfer 100 euros. He has $ 100 and £ 50 in his wallet. First, the required amount of euros in dollar equivalent will be withdrawn from the sender (`startСurrency`). And if there is not enough funds on the starting currency, the rest will be withdrawn from the insurance currency (`insuranceСurrency`).
+
+To get the PayDo `referenceId` you should click to the top right corner where your email/account ID is.
+
+![PayDo reference ID](../images/paydo-reference-id.png)
 
 ## Endpoint description
 
