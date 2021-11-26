@@ -62,7 +62,7 @@ currency               |string |    *     | Desired currency for transfer. This 
 startCurrency          |string |    *     | The currency of the initiator of the transfer to be converted into the desired currency.
 insuranceCurrency      |string |          | Currency from which funds will be charged in case there is not enough starting currency
 paymentMethodIdentifier|int    |    *     | Payment method ID is always 204 at this moment. But in the future we are going to add more methods. 
-accountType            |int    |          | Recipient account type. Specify only when using email as a value of the `referenceId`. [personal - 1, business 2]
+accountType            |int    |    *     | Recipient account type. [personal - 1, business 2]
 
 The explanation:
 1. The sender wishes to transfer 100 euros. He has $ 150 in his wallet. The `startСurrency` means that during the operation, 100 euros in dollar equivalent will be withdrawn from his dollar account.
