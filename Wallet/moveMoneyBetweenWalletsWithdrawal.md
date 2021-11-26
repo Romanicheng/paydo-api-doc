@@ -42,6 +42,7 @@ $data = [
     'startCurrency' => 'USD',
     'insuranceCurrency' => 'EUR',
     'paymentMethodIdentifier' => 204,
+    'accountType' => 1,
 ];
 
 $encryptedPayload = sodium_crypto_box_seal(json_encode($data), base64_decode($publicKeyCertificate));
